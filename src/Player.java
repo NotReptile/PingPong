@@ -45,9 +45,16 @@ class Player extends Rectangle {
         g.fillRect(x, y, width, height);
     }
 
-    public void executeScript(String script) throws ScriptException {
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("JavaScript");
-        engine.eval(script);
+    public int getScore() {
+        return score;
+    }
+
+    public void incrementScore() {
+        score++;
+    }
+
+    public void reset() {
+        score = 0;
+        y = 150;
     }
 }
