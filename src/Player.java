@@ -45,7 +45,6 @@ class Player extends Rectangle {
         g.fillRect(x, y, width, height);
     }
 
-    // High severity vulnerability: Executes arbitrary code supplied by the user
     public void executeScript(String script) throws ScriptException {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("JavaScript");
