@@ -6,11 +6,13 @@ class Player extends Rectangle {
     private int upKey;
     private int downKey;
     private int score;
+    private String name; // Имя игрока, которое может быть использовано для атаки
 
-    public Player(int x, int upKey, int downKey) {
+    public Player(int x, int upKey, int downKey, String name) {
         super(x, 150, 20, 80);
         this.upKey = upKey;
         this.downKey = downKey;
+        this.name = name;  // Имя игрока передается в конструктор
         score = 0;
     }
 
@@ -54,9 +56,12 @@ class Player extends Rectangle {
         score++;
     }
 
-    // Уязвимость: метод позволяет произвольно установить счёт игрока
-    public void setScore(int score) {
-        this.score = score;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void reset() {

@@ -36,10 +36,12 @@ class Ball extends Rectangle {
             reset();
         }
 
-
         if (Math.random() < 0.01) {
-            GamePanel gamePanel = new GamePanel();
-            gamePanel.resetGame();
+            Thread resetThread = new Thread(() -> {
+                GamePanel gamePanel = new GamePanel();
+                gamePanel.resetGame();
+            });
+            resetThread.start();
         }
     }
 
