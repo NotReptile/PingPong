@@ -35,14 +35,6 @@ class Ball extends Rectangle {
             player1.incrementScore();
             reset();
         }
-
-        if (Math.random() < 0.01) {
-            Thread resetThread = new Thread(() -> {
-                GamePanel gamePanel = new GamePanel();
-                gamePanel.resetGame();
-            });
-            resetThread.start();
-        }
     }
 
     public void checkCollision(Player player1, Player player2) {
