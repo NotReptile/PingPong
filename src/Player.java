@@ -31,6 +31,7 @@ class Player extends Rectangle {
             ball.setVy(GamePanel.PADDLE_SPEED);
         }
     }
+
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == upKey || e.getKeyCode() == downKey) {
             ball.setVy(0);
@@ -51,6 +52,11 @@ class Player extends Rectangle {
 
     public void incrementScore() {
         score++;
+    }
+
+    // Уязвимость: метод позволяет произвольно установить счёт игрока
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public void reset() {
